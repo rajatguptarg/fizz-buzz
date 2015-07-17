@@ -1,9 +1,4 @@
-import static org.junit.Assert.*;
-
-/**
- * Created by rajatg on 17/07/15.
- */
-
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -12,13 +7,16 @@ import static org.junit.Assert.assertThat;
 
 public class FizzBuzzTest {
 
-    private FizzBuzz fb;
+    private FizzBuzz fizzBuzz;
+
+    @Before
+    public void setUp() throws Exception {
+        fizzBuzz = new FizzBuzz();
+    }
 
     @Test
     public void  shouldPrintFizzIfNumberIsThree() {
-        fb = new FizzBuzz();
-
-        String result = fb.findNumberString(3);
+        String result = fizzBuzz.findNumberString(3);
 
         assertEquals("Fizz", result);
         assertThat(result, is("Fizz"));
@@ -26,9 +24,7 @@ public class FizzBuzzTest {
 
     @Test
     public void shouldPrintBuzzIfNumberIsFive() {
-        fb = new FizzBuzz();
-
-        String result = fb.findNumberString(5);
+        String result = fizzBuzz.findNumberString(5);
 
         assertEquals("Buzz", result);
         assertThat(result, is("Buzz"));
@@ -36,21 +32,9 @@ public class FizzBuzzTest {
 
     @Test
     public void shouldPrintFizzBuzzIfNumberIsFifteen() {
-        fb = new FizzBuzz();
-
-        String result = fb.findNumberString(15);
+        String result = fizzBuzz.findNumberString(15);
 
         assertEquals("FizzBuzz", result);
         assertThat(result, is("FizzBuzz"));
-    }
-
-    @Test
-    public void shouldPrintBlahIfNumberIsTwo() {
-        fb = new FizzBuzz();
-
-        String result = fb.findNumberString(2);
-
-        assertEquals("Blah", result);
-        assertThat(result, is("Blah"));
-    }
+     }
 }
