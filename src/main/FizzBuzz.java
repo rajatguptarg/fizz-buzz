@@ -39,8 +39,8 @@ public class FizzBuzz {
         for(int i = 1; i <= numberRange; i++) {
 
             boolean flag = true;
-            numberString += findNumberString(i);
-            
+            numberString += (findNumberString(i) + " ");
+
         }
         return numberString;
     }
