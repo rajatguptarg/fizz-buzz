@@ -4,25 +4,43 @@
 
 public class FizzBuzz {
 
-    public String fizzBuzzString(int numberRange) {
+    //private int numberRange;
 
-        String numberString = null;
+    //public FizzBuzz(int numRange) {
+    //    this.numberRange = numRange;
+    //}
 
-        for(int i = 0; i <= numberRange; i++) {
+    public String findNumberString(int number) {
+
+        String numberString = "";
+        boolean flag = true;
+
+        if(number % 3 == 0) {
+            numberString += "Fizz";
+            flag = false;
+        }
+
+        if(number % 5 == 0) {
+            numberString += "Buzz";
+            flag = false;
+        }
+
+        if(flag) {
+            numberString = "Blah";
+        }
+
+        return numberString;
+    }
+
+    public String startGame(int numberRange) {
+
+        String numberString = "";
+
+        for(int i = 1; i <= numberRange; i++) {
 
             boolean flag = true;
-            if(i % 3 == 0) {
-                numberString += "Fizz";
-                flag = false;
-            }
-            if(i % 5 == 0) {
-                numberString += "Buzz";
-                flag = false;
-            }
-            if(flag) {
-                numberString = "Blah";
-            }
-            numberString += " ";
+            numberString += findNumberString(i);
+            
         }
         return numberString;
     }
