@@ -43,4 +43,14 @@ public class FizzBuzzTest {
         assertEquals("FizzBuzz", result);
         assertThat(result, is("FizzBuzz"));
     }
+
+    @Test
+    public void shouldPrintBlahIfNumberIsTwo() {
+        fb = new FizzBuzz();
+
+        String result = fb.findNumberString(2);
+
+        assertEquals("Blah", result);
+        assertThat(result, is("Blah"));
+    }
 }
