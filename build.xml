@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="fizz-buzz" default="runjunit">
+
+    <property name="lib.dir" value="lib"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="junit-4.8.2.jar"/>
+    </path>
+    <target name="runjunit" depends="compile">
+        <mkdir dir="reports" />
+        <!--<junitreport todir="./reports">-->
+        <!--<fileset dir="./reports">-->
+        <!--<include name="TEST-*.xml"/>-->
+        <!--</fileset>-->
+        <!--<report format="frames" todir="./report/html"/>-->
+        <!--</junitreport>-->
+        <junit printsummary="true" showoutput="yes" >
+            <test name="FizzBuzzTest" />
+            <classpath>
+                <path refid="classpath" />
+                <pathelement location="out" />
+            </classpath>
+        </junit>
+    </target>
+    <target name="compile">
+        <javac srcdir="./src" destdir="out" includeantruntime="false" classpath="lib/junit-4.8.2.jar"/>
+    </target>
+    <target name="package" depends="compile">
+        <jar destfile="fizzbuzz.jar"
+             basedir="out"
+             includes="com/das/**"
+             excludes="**/*Test*" >
+            <manifest>
+                <attribute name="Main-Class" value="FizzBuzz" />
+            </manifest>
+        </jar>
+
+    </target>
+</project>
