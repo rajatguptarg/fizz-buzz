@@ -8,12 +8,6 @@
     </path>
     <target name="runjunit" depends="compile">
         <mkdir dir="reports" />
-        <!--<junitreport todir="./reports">-->
-        <!--<fileset dir="./reports">-->
-        <!--<include name="TEST-*.xml"/>-->
-        <!--</fileset>-->
-        <!--<report format="frames" todir="./report/html"/>-->
-        <!--</junitreport>-->
         <junit printsummary="true" showoutput="yes" >
             <test name="FizzBuzzTest" />
             <classpath>
@@ -28,7 +22,7 @@
     <target name="package" depends="compile">
         <jar destfile="fizzbuzz.jar"
              basedir="out"
-             includes="com/das/**"
+             includes="**"
              excludes="**/*Test*" >
             <manifest>
                 <attribute name="Main-Class" value="FizzBuzz" />
