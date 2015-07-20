@@ -1,14 +1,4 @@
-/**
- * Created by rajatg on 17/07/15.
- */
-
 public class FizzBuzz {
-
-    //private int numberRange;
-
-    //public FizzBuzz(int numRange) {
-    //    this.numberRange = numRange;
-    //}
 
     public String findNumberString(int number) {
 
